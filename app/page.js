@@ -1,11 +1,14 @@
-import Image from "next/image";
+"use client"
+import React,{useState} from 'react';
+import MedicineDetails from './components/MedicineDetails';
 
-export default function Home() {
-  return (
-    <>
-    <p>
-      Git trial 
-    </p>
-    </>
-  )
-}
+const Home = () => {
+    return (
+        <div>
+            <h1 className='py-2'>Medicine Details App</h1>
+            <MedicineDetails />
+        </div>
+    );
+};
+
+export default Home;
