@@ -31,7 +31,7 @@ const MedicineDetails = () => {
     return (
         <div className='px-3'>
             <form onSubmit={handleSubmit}>
-                <input className=' px-4 text-black border-solid rounded-full mr-2'
+                <input className=' bg-transparent px-4 text-black border-2 rounded-full mr-2'
                     type="text"
                     placeholder="Enter medicine name..."
                     value={medicineName}
