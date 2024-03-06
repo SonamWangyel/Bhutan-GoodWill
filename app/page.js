@@ -5,7 +5,7 @@ import MedicineDetails from './components/MedicineDetails';
 const Home = () => {
     return (
         <div>
-            <h1 className='py-2'>Medicine Details App</h1>
+            <h1 className='py-2'>Medicine Details</h1>
             <MedicineDetails />
         </div>
     );
