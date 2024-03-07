@@ -8,7 +8,8 @@ const MedicineDetails = () => {
     const fetchMedicineDetails = async () => {
         try {
             const url = `https://api.fda.gov/drug/label.json?search=openfda.brand_name:${medicineName}&limit=1`;
-            const response = await fetch(url);
+            const response = await fetch(url)
+            const API_KEY=process.env.local
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
@@ -29,9 +30,9 @@ const MedicineDetails = () => {
     };
 
     return (
-        <div className='px-3'>
+        <div className='px-3 '>
             <form onSubmit={handleSubmit}>
-                <input className=' bg-transparent px-4 text-black border-2 rounded-full mr-2'
+                <input className= ' bg-transparent px-4 text-white border-2 rounded-full mr-2 mt-3'
                     type="text"
                     placeholder="Enter medicine name..."
                     value={medicineName}

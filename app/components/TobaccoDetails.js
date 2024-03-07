@@ -1,38 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 const TobaccoDetails = () => {
-    const [productName, setProductName] = useState('');
-    const [productDetails, setProductDetails] = useState(null);
-    const [error, setError] = useState('');
+    const [productName, setProductName] = useState('')
+    const [productDetails, setProductDetails] = useState(null)
+    const [error, setError] = useState('')
 
     const fetchProductDetails = async () => {
         try {
             const url = `https://api.fda.gov/tobacco/problem.json?search=tobacco_products.exact:${productName}&limit=1`;
             const response = await fetch(url);
             if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
+                throw new Error(`HTTP error! Status: ${response.status}`)
             }
-            const data = await response.json();
+            const data = await response.json()
             console.log('Tobacco product details:', data);
             if (data.results.length === 0) {
-                throw new Error(`No tobacco product found with the name ${productName}`);
+                throw new Error(`No tobacco product found with the name ${productName}`)
             }
-            setProductDetails(data.results[0]);
+            setProductDetails(data.results[0])
         } catch (error) {
-            setError(error.message);
+            setError(error.message)
         }
-    };
+    }
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        fetchProductDetails();
-    };
+        e.preventDefault()
+        fetchProductDetails()
+    }
 
     return (
-        <div>
+        <div className='px-3'>
             <form onSubmit={handleSubmit}>
                 <input
-                    className='text-black px-8 border-solid rounded-full'
+                    className='bg-transparent px-4 text-black border-2 rounded-full mr-2'
                     type="text"
                     placeholder="Enter tobacco product name..."
                     value={productName}
@@ -50,7 +50,7 @@ const TobaccoDetails = () => {
                 </div>
             )}
         </div>
-    );
-};
+    )
+}
 
 export default TobaccoDetails;

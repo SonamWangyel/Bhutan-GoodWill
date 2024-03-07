@@ -1,7 +1,7 @@
 "use client"
 import React,{useState} from 'react';
-import MedicineDetails from './components/MedicineDetails';
-import Navbar from './components/Navbar';
+import GenericDetails from '../components/GenericDetails';
+import Navbar from '../components/Navbar';
 
 const Home = () => {
     return (
@@ -9,8 +9,8 @@ const Home = () => {
         <div className='sticky top-0'>        
          <Navbar />
         </div>
-             <h1 className='px-3 mt-3'>Medicine Details </h1>
-            <MedicineDetails />
+             <h1 className='px-3 mt-3'>Generic Details </h1>
+            <GenericDetails />
         </div>
     );
 };
