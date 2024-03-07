@@ -1,11 +1,13 @@
 "use client"
 import React,{useState} from 'react';
-import MedicineDetails from './components/MedicineDetails';
+import MedicineDetails from './components/GenereicName';
+import Navbar from './components/Navbar';
 
 const Home = () => {
     return (
-        <div>
-            <h1 className='py-2'>Medicine Details</h1>
+        <div className='gradient-conic'>
+         <Navbar/>
+            <h1 className='py-2 px-3'>Medicine Details </h1>
             <MedicineDetails />
         </div>
     );
